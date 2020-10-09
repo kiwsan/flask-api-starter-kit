@@ -5,9 +5,12 @@ verify_ssl = true
 
 [dev-packages]
 pylint = "*"
+autopep8 = "*"
 
 [packages]
 flask = "*"
+flask-restplus = "*"
+werkzeug = "==0.16.1"
 
 [requires]
 python_version = "3.8"
