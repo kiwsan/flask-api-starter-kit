@@ -1,15 +1,23 @@
-from flask import Flask
-from flask_restplus import Resource, Api
+import os
 
-app = Flask(__name__)
-api = Api(app)
+from flask_script import Manager
+
+from app.main import create_app
+
+from app import blueprint
+
+app = create_app(os.getenv('BOILERPLATE_ENV') or 'dev')
+app.register_blueprint(blueprint)
+
+app.app_context().push()
+
+manager = Manager(app)
 
 
-@api.route('/hello')
-class HelloWorld(Resource):
-    def get(self):
-        return {'hello': 'world'}
+@manager.command
+def run():
+    app.run()
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    manager.run()

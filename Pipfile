@@ -11,6 +11,10 @@ autopep8 = "*"
 flask = "*"
 flask-restplus = "*"
 werkzeug = "==0.16.1"
+flask-bcrypt = "*"
+flask-migrate = "*"
+pyjwt = "*"
+flask-script = "*"
 
 [requires]
 python_version = "3.8"
