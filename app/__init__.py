@@ -8,7 +8,6 @@ blueprint = Blueprint('api', __name__)
 api = Api(blueprint,
           title='FLASK-RESTPlus API',
           version='1.0',
-          description='a boilerplate for flask restplus web service'
-          )
+          description='a boilerplate for flask restplus web service')
 
-api.add_namespace(value_controller_ns, path='/value')
+api.add_namespace(value_controller_ns, path='/api/v1/values')
